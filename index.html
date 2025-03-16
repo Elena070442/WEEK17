@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let cat = {
+  name: 'Tom',
+  isHunter: true
+}
+
+let mouse = {
+  name: 'Jerry',
+  isHunter: false
+}
+
+mouse = cat;
+cat.isHunter = false;
+mouse.isHunter = undefined;
+
+console.log(mouse.isHunter);
+
+function Square(color, size) {
+    this.color = color;
+    this.size = size;
+}
+
+const redSquare = new Square('red', 100); //Создаём красный квадрат размером 100 пикселей
+drawSquare(redSquare); //Передаём объект redSquare в функцию drawSquare
+
+function drawSquare(square) {
+    const squareElement = document.createElement('div');//Создаём элемент <div>
+    squareElement.style.backgroundColor = square.color; //Задаём цвет фона элемента
+    squareElement.style.width = square.size + 'px';  //Задаём ширину элемента
+    squareElement.style.height = square.size + 'px'; //Задаём высоту элемента
+    document.body.appendChild(squareElement); //Добавляем элемент в тело документа
+}
+    </script>
+</body>
+</html>
